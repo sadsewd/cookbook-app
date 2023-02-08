@@ -37,3 +37,7 @@ table {
 textarea {
   white-space: revert;
 }
+
+body {
+  background: #dadada;
+}

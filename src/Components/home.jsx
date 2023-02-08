@@ -1,3 +1,4 @@
+import * as S from "./style";
 export default function Home() {
-  return;
+  return <p>Home</p>;
 }

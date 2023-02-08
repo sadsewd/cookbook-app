@@ -1,0 +1,11 @@
+{
+  "recipes": [
+    {
+      "name": "Veggie stew",
+      "time": "50",
+      "ingredients": "potato, carrot",
+      "method": "put 'em in the pot and ya don",
+      "id": 1
+    }
+  ]
+}
