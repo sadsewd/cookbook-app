@@ -6,6 +6,13 @@
       "ingredients": "potato, carrot",
       "method": "put 'em in the pot and ya don",
       "id": 1
+    },
+    {
+      "name": "Veggie soup",
+      "time": "50",
+      "ingredients": "potato, carrot",
+      "method": "put 'em in the pot add some water and ya don",
+      "id": 1
     }
   ]
 }
