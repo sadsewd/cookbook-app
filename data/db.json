@@ -8,10 +8,10 @@
       "id": 1
     },
     {
-      "name": "Veggie soup",
-      "time": "50",
-      "ingredients": "potato, carrot",
-      "method": "put 'em in the pot add some water and ya don",
+      "name": "Hospital food",
+      "time": "25",
+      "ingredients": "1ml of water, carrot, maybe potato",
+      "method": "I dont know what to do with it",
       "id": 1
     }
   ]

@@ -27,7 +27,6 @@ export default function Create() {
   //saves the current ingredients to ingredients array on clicking add
   const addIngredients = () => {
     setIngredient((prevState) => [...prevState, CurrentIngredient]);
-    console.log(ingredient);
     setCurrentIngredient("");
   };
 
