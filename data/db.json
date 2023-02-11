@@ -8,10 +8,17 @@
       "id": 1
     },
     {
-      "name": "Hospital food",
-      "time": "25",
-      "ingredients": "1ml of water, carrot, maybe potato",
-      "method": "I dont know what to do with it",
+      "name": "Veggie stew",
+      "time": "50",
+      "ingredients": "potato, carrot",
+      "method": "put 'em in the pot and ya don",
+      "id": 1
+    },
+    {
+      "name": "Veggie stew",
+      "time": "50",
+      "ingredients": "potato, carrot",
+      "method": "put 'em in the pot and ya don",
       "id": 1
     }
   ]

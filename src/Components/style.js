@@ -71,6 +71,61 @@ export const NavBar = styled.nav`
 
 // ===== Home CSS ===== //
 
+export const MainRecipeContainer = styled.div`
+  display: flex;
+  margin: auto;
+  flex-wrap: wrap;
+  width: 80%;
+  margin-top: 5vh;
+  justify-content: center;
+`;
+
+export const RecipeContainer = styled.div`
+  position: relative;
+  background: white;
+  padding: 3vh;
+  display: flex;
+  flex-direction: column;
+  margin: 2.5vh;
+  width: 20vw;
+  height: 30vh;
+  ${borderRadius};
+  box-shadow: 5px 5px 3px #cfcfcf;
+`;
+
+export const RecipeName = styled.h1`
+  font-size: 3vh;
+  font-weight: bold;
+  color: #4b4b4b;
+  margin-bottom: 1vh;
+`;
+
+export const Time = styled.p`
+  margin-bottom: 2vh;
+  font-size: 2vh;
+  color: #9f9f9f;
+`;
+
+export const RecipeMethod = styled.p`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.8vh;
+`;
+
+export const ViewRecipeButton = styled.button`
+  background: ${grayBg};
+  color: ${grayText};
+  width: 25%;
+  height: 3vh;
+  font-size: 2vh;
+  text-align: center;
+  ${borderRadius};
+  position: absolute;
+  bottom: 3vh;
+  left: 37%;
+`;
+
 // ===== End of home CSS ===== //
 
 // ===== Create CSS ===== //
