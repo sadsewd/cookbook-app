@@ -24,7 +24,7 @@ export const LogoText = styled(Link)`
   font-size: 1.5vw;
   float: left;
   order: 1;
-  margin: 0 45vw 0 10vw;
+  margin: 0 47.2vw 0 10vw;
   :hover {
     cursor: pointer;
   }
@@ -38,6 +38,7 @@ export const CreateButton = styled(Link)`
   margin-left: 2vw;
   border: solid white 1px;
   ${borderRadius};
+  cursor: pointer;
 `;
 
 export const SearchBar = styled.input`
@@ -124,6 +125,7 @@ export const ViewRecipeButton = styled.button`
   position: absolute;
   bottom: 3vh;
   left: 37%;
+  cursor: pointer;
 `;
 
 // ===== End of home CSS ===== //
@@ -213,3 +215,38 @@ export const Submit = styled.input`
 `;
 
 // ===== End of create CSS ===== //
+
+// ===== details CSS ===== //
+
+export const DetailsContainer = styled.div`
+  background: white;
+  width: 80%;
+  margin: 3vh 10vw;
+  padding: 2.5vh;
+  flex-direction: column;
+  display: flex;
+`;
+
+export const DetailsHeading = styled.h1`
+  font-weight: bold;
+  font-size: 2vw;
+  margin: 3vh 0 4vh;
+  text-align: center;
+`;
+
+export const DetailsTime = styled.p`
+  text-align: center;
+  font-size: 2vh;
+`;
+
+export const DetailsIngredients = styled.p`
+  color: ${grayText};
+  text-align: center;
+  margin-bottom: 1vh;
+  font-size: 2vh;
+`;
+
+export const DetailsMethod = styled.p`
+  font-size: 2vh;
+`;
+// ===== End of details CSS ===== //

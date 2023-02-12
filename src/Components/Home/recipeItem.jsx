@@ -5,8 +5,8 @@ import * as S from "../style";
 const RecipeItem = ({ recipe }) => {
   const navigate = useNavigate();
 
-  const handleViewClick = (id) => {
-    navigate(`/details/${recipe.id}`);
+  const handleClick = () => {
+    navigate(`/details/${recipe.id}`, { state: recipe });
   };
 
   return (
@@ -15,9 +15,7 @@ const RecipeItem = ({ recipe }) => {
         <S.RecipeName>{recipe.name}</S.RecipeName>
         <S.Time>{recipe.time} minutes to make.</S.Time>
         <S.RecipeMethod>{recipe.method}</S.RecipeMethod>
-        <S.ViewRecipeButton onClick={handleViewClick}>
-          Cook this
-        </S.ViewRecipeButton>
+        <S.ViewRecipeButton onClick={handleClick}>Cook this</S.ViewRecipeButton>
       </S.RecipeContainer>
     </>
   );

@@ -10,16 +10,16 @@
     {
       "name": "Veggie stew",
       "time": "50",
-      "ingredients": "potato, carrot",
+      "ingredients": ["potato", "carrot"],
       "method": "put 'em in the pot and ya don",
-      "id": 1
+      "id": 2
     },
     {
       "name": "Veggie stew",
       "time": "50",
       "ingredients": "potato, carrot",
-      "method": "put 'em in the pot and ya don",
-      "id": 1
+      "method": "dont",
+      "id": 3
     }
   ]
 }
