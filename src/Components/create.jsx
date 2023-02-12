@@ -6,12 +6,12 @@ export default function Create() {
   const navigate = useNavigate();
   const [CurrentIngredient, setCurrentIngredient] = useState("");
   const [ingredient, setIngredient] = useState([]);
+  const [isPending, setIsPending] = useState(false);
   const [recipe, setRecipe] = useState({
-    title: "",
+    name: "",
     ingredients: [],
     method: "",
     time: "",
-    id: "",
   });
 
   //saves values from input fields where values have changed,
@@ -44,21 +44,32 @@ export default function Create() {
     setCurrentIngredient(e.target.value);
   };
 
-  //right now only redirects back to home page but should save date to the db after submitting
+  //send the data to the json server and redirects to homepage
   const handleSubmit = () => {
-    navigate("/");
+    setIsPending(true);
+    fetch("http://192.168.8.130:3001/recipes", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(recipe),
+    })
+      .then(() => {
+        setIsPending(false);
+      })
+      .then(() => {
+        navigate("/");
+      });
   };
 
   return (
     <S.CreateContainer>
       <S.CreateHeader>Add a new recipe</S.CreateHeader>
       <S.CreateForm>
-        <S.Label htmlFor="title">Recipe title:</S.Label>
+        <S.Label htmlFor="name">Recipe title:</S.Label>
         <S.Input
           type="text"
-          id="title"
-          name="title"
-          value={recipe.title}
+          id="name"
+          name="name"
+          value={recipe.name}
           onChange={handleInput}
         />
         <S.Label htmlFor="ingredients">Recipe ingredients:</S.Label>
@@ -91,7 +102,12 @@ export default function Create() {
           value={recipe.time}
           onChange={handleInput}
         />
-        <S.Submit type="button" onClick={handleSubmit} value="Submit" />
+        {!isPending && (
+          <S.Submit type="button" onClick={handleSubmit} value="Submit" />
+        )}
+        {isPending && (
+          <S.Submit type="button" disabled value="Adding recipe..." />
+        )}
       </S.CreateForm>
     </S.CreateContainer>
   );

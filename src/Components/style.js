@@ -248,5 +248,6 @@ export const DetailsIngredients = styled.p`
 
 export const DetailsMethod = styled.p`
   font-size: 2vh;
+  margin-top: 2vh;
 `;
 // ===== End of details CSS ===== //

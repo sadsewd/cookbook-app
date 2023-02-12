@@ -3,23 +3,22 @@
     {
       "name": "Veggie stew",
       "time": "50",
-      "ingredients": ["potato", "carrot"],
-      "method": "put 'em in the pot and ya don",
+      "ingredients": [
+        "potato",
+        "carrot"
+      ],
+      "method": "put them in the pot add some water and boil till the black hole spawns in",
       "id": 1
     },
     {
-      "name": "Veggie stew",
-      "time": "50",
-      "ingredients": ["potato", "carrot"],
-      "method": "put 'em in the pot and ya don",
+      "name": "heck",
+      "ingredients": [
+        "gaming",
+        "joe"
+      ],
+      "method": "hello",
+      "time": "2675",
       "id": 2
-    },
-    {
-      "name": "Veggie stew",
-      "time": "50",
-      "ingredients": ["potato", "carrot"],
-      "method": "dont",
-      "id": 3
     }
   ]
 }
