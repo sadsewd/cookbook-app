@@ -3,7 +3,7 @@
     {
       "name": "Veggie stew",
       "time": "50",
-      "ingredients": "potato, carrot",
+      "ingredients": ["potato", "carrot"],
       "method": "put 'em in the pot and ya don",
       "id": 1
     },
@@ -17,7 +17,7 @@
     {
       "name": "Veggie stew",
       "time": "50",
-      "ingredients": "potato, carrot",
+      "ingredients": ["potato", "carrot"],
       "method": "dont",
       "id": 3
     }
