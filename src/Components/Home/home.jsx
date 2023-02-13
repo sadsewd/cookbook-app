@@ -9,7 +9,6 @@ export default function Home(searchInput) {
   const recipes = data.recipes;
   const isPending = data.isPending;
   const [filteredRecipes, setFilteredRecipes] = useState([]);
-  const searchTerm = searchInput;
 
   useEffect(() => {
     if (isPending === false) {
@@ -26,7 +25,6 @@ export default function Home(searchInput) {
         setFilteredRecipes(filteredRecipes1);
       }
     }
-    console.log(searchInput.searchInput);
   }, [searchInput]);
 
   return (

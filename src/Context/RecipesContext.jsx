@@ -1,4 +1,4 @@
-import { createContext, useReducer, useEffect } from "react";
+import { createContext, useReducer, useEffect, useState } from "react";
 import useFetch from "../hooks/useFetch";
 
 export const RecipesContext = createContext();
@@ -23,12 +23,12 @@ export const DataProvider = ({ children }) => {
     dispatch({ type: "UPDATE_DATA", payload: { recipes, isPending } });
   }, [recipes, isPending]);
 
-  const fetchedData = (data) => {
+  const refetchData = (data) => {
     dispatch({ type: "UPDATE_DATA", payload: data });
   };
 
   return (
-    <RecipesContext.Provider value={{ ...state, fetchedData }}>
+    <RecipesContext.Provider value={{ ...state, refetchData }}>
       {children}
     </RecipesContext.Provider>
   );

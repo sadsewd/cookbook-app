@@ -6,7 +6,7 @@ export default function Create() {
   const navigate = useNavigate();
   const [CurrentIngredient, setCurrentIngredient] = useState("");
   const [ingredient, setIngredient] = useState([]);
-  const [isPending, setIsPending] = useState(false);
+  const [isPendingTemp, setIsPending] = useState(false);
   const [recipe, setRecipe] = useState({
     name: "",
     ingredients: [],
@@ -51,13 +51,10 @@ export default function Create() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(recipe),
-    })
-      .then(() => {
-        setIsPending(false);
-      })
-      .then(() => {
-        navigate("/");
-      });
+    }).then(() => {
+      setIsPending(false);
+      navigate("/");
+    });
   };
 
   return (
@@ -102,10 +99,10 @@ export default function Create() {
           value={recipe.time}
           onChange={handleInput}
         />
-        {!isPending && (
+        {!isPendingTemp && (
           <S.Submit type="button" onClick={handleSubmit} value="Submit" />
         )}
-        {isPending && (
+        {isPendingTemp && (
           <S.Submit type="button" disabled value="Adding recipe..." />
         )}
       </S.CreateForm>

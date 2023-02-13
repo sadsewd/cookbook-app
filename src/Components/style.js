@@ -92,6 +92,10 @@ export const RecipeContainer = styled.div`
   height: 30vh;
   ${borderRadius};
   box-shadow: 5px 5px 3px #cfcfcf;
+  &:hover {
+    transform: rotate(3deg);
+    transition: all 0.3 ease-in-out;
+  }
 `;
 
 export const RecipeName = styled.h1`
