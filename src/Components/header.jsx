@@ -1,5 +1,7 @@
+import { useData } from "../Hooks/useData.jsx";
 import * as S from "./style.js";
-export default function Header({ searchInput, handleSearchInput }) {
+export default function Header() {
+  const { updateSearchInput } = useData();
   return (
     <S.Header>
       <S.NavBar>
@@ -7,8 +9,7 @@ export default function Header({ searchInput, handleSearchInput }) {
         <S.SearchBar
           type="text"
           id="Search"
-          value={searchInput}
-          onChange={handleSearchInput}
+          onChange={(e) => updateSearchInput(e.target.value)}
         />
         <S.SearchText>Search:</S.SearchText>
         <S.CreateButton to="/create">create recipe</S.CreateButton>
