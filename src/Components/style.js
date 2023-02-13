@@ -72,12 +72,19 @@ export const NavBar = styled.nav`
 
 // ===== Home CSS ===== //
 
+export const HomeSearch = styled.h1`
+  font-weight: bold;
+  font-size: 3vh;
+  text-align: center;
+  margin-top: 4vh;
+`;
+
 export const MainRecipeContainer = styled.div`
   display: flex;
   margin: auto;
   flex-wrap: wrap;
   width: 80%;
-  margin-top: 5vh;
+  margin-top: 3vh;
   justify-content: center;
 `;
 

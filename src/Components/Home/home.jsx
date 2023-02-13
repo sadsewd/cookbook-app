@@ -29,6 +29,9 @@ export default function Home(searchInput) {
 
   return (
     <>
+      {searchInput.searchInput.length > 0 && (
+        <S.HomeSearch>Recipes including {searchInput.searchInput}</S.HomeSearch>
+      )}
       <RecipeList
         recipes={
           searchInput.searchInput.length === 0 ? recipes : filteredRecipes
