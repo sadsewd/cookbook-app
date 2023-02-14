@@ -1,7 +1,8 @@
-import { useData } from "../Hooks/useData.jsx";
+import { useDispatch } from "react-redux";
+import { UPDATE_INPUT } from "../Redux-toolkit/Recipes.jsx";
 import * as S from "./style.js";
 export default function Header() {
-  const { updateSearchInput } = useData();
+  const dispatch = useDispatch();
   return (
     <S.Header>
       <S.NavBar>
@@ -9,7 +10,7 @@ export default function Header() {
         <S.SearchBar
           type="text"
           id="Search"
-          onChange={(e) => updateSearchInput(e.target.value)}
+          onChange={(e) => dispatch(UPDATE_INPUT(e.target.value))}
         />
         <S.SearchText>Search:</S.SearchText>
         <S.CreateButton to="/create">create recipe</S.CreateButton>

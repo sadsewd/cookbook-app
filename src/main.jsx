@@ -2,12 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
-import { DataProvider } from "./Context/RecipesContext";
+import { Provider } from "react-redux";
+import store from "./Redux-toolkit/store";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <DataProvider>
+    <Provider store={store}>
       <App />
-    </DataProvider>
+    </Provider>
   </React.StrictMode>
 );

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useData } from "../Hooks/useData";
 import * as S from "./style";
 
 export default function Create() {
@@ -44,7 +43,6 @@ export default function Create() {
   const handleIngredients = (e) => {
     setCurrentIngredient(e.target.value);
   };
-  const { refetchData } = useData();
   //send the data to the json server and redirects to homepage
   const handleSubmit = () => {
     setIsPending(true);

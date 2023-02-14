@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useData } from "../Hooks/useData";
+import { useSelector } from "react-redux";
 import * as S from "./style";
 
 export default function Details(id) {
-  const { data } = useData();
+  const { data } = useSelector((state) => state.dataState);
   const recipes = data.recipes;
   const isPending = data.isPending;
 

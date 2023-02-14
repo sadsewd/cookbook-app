@@ -1,13 +1,14 @@
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import Home from "./Components/Home/home";
-import { useData } from "./Hooks/useData";
 import useFetch from "./hooks/useFetch";
+import { UPDATE_DATA } from "./Redux-toolkit/Recipes";
 
 const HomePage = () => {
   const { DbData: recipes, isPending } = useFetch();
-  const { refetchData } = useData();
+  const dispatch = useDispatch();
   useEffect(() => {
-    refetchData({ recipes, isPending });
+    dispatch(UPDATE_DATA({ recipes, isPending }));
   }, [recipes, isPending]);
   return <Home />;
 };
