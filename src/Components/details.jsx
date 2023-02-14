@@ -16,7 +16,9 @@ export default function Details(id) {
         <>
           <S.DetailsHeading>{recipes[id.id].name}</S.DetailsHeading>
           <S.DetailsTime>
-            Takes {recipes[id.id].time} minutes to cook
+            {recipes[id.id].time && (
+              <>Takes {recipes[id.id].time} minutes to cook</>
+            )}
           </S.DetailsTime>
           <S.DetailsIngredients>
             {recipes[id.id].ingredients.join(",")}

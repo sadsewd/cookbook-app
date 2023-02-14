@@ -4,6 +4,7 @@ import * as S from "./style";
 
 export default function Create() {
   const navigate = useNavigate();
+  const [dataIsValid, setDataIsValid] = useState();
   const [CurrentIngredient, setCurrentIngredient] = useState("");
   const [ingredient, setIngredient] = useState([]);
   const [isPendingTemp, setIsPending] = useState(false);
@@ -45,15 +46,24 @@ export default function Create() {
   };
   //send the data to the json server and redirects to homepage
   const handleSubmit = () => {
-    setIsPending(true);
-    fetch("http://192.168.8.130:3001/recipes", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(recipe),
-    }).then(() => {
-      setIsPending(false);
-      navigate("/");
-    });
+    if (
+      recipe.name !== "" &&
+      recipe.ingredients !== [] &&
+      recipe.method !== ""
+    ) {
+      setIsPending(true);
+      setDataIsValid(true);
+      fetch("http://192.168.8.130:3001/recipes", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(recipe),
+      }).then(() => {
+        setIsPending(false);
+        navigate("/");
+      });
+    } else {
+      setDataIsValid(false);
+    }
   };
 
   return (
@@ -98,10 +108,17 @@ export default function Create() {
           value={recipe.time}
           onChange={handleInput}
         />
-        {!isPendingTemp && (
+        {dataIsValid === false && (
+          <S.Submit
+            type="button"
+            onClick={handleSubmit}
+            value="Please add data to recipe name, method and ingredients"
+          />
+        )}
+        {!isPendingTemp && dataIsValid === undefined && (
           <S.Submit type="button" onClick={handleSubmit} value="Submit" />
         )}
-        {isPendingTemp && (
+        {isPendingTemp && dataIsValid && (
           <S.Submit type="button" disabled value="Adding recipe..." />
         )}
       </S.CreateForm>
