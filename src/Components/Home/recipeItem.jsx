@@ -6,7 +6,7 @@ const RecipeItem = ({ recipe }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/details/${recipe.id}`, { state: recipe });
+    navigate(`/details/${recipe.id}`);
   };
 
   return (
