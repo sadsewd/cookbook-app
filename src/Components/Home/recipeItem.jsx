@@ -12,9 +12,19 @@ const RecipeItem = ({ recipe }) => {
   return (
     <>
       <S.RecipeContainer>
-        <S.RecipeName>{recipe.name}</S.RecipeName>
-        <S.Time>{recipe.time} minutes to make.</S.Time>
-        <S.RecipeMethod>{recipe.method}</S.RecipeMethod>
+        <S.RecipeName>
+          {recipe.name ? <>{recipe.name}</> : <>Recipe name not given</>}
+        </S.RecipeName>
+        <S.Time>
+          {recipe.time ? (
+            <>{recipe.time} minutes to make</>
+          ) : (
+            <>Time to cook is not given</>
+          )}
+        </S.Time>
+        <S.RecipeMethod>
+          {recipe.method ? <>{recipe.method}</> : <>No description given</>}
+        </S.RecipeMethod>
         <S.ViewRecipeButton onClick={handleClick}>Cook this</S.ViewRecipeButton>
       </S.RecipeContainer>
     </>

@@ -7,20 +7,11 @@ import HomePage from "./HomePage";
 import DetailsPage from "./detailsPage";
 
 function App() {
-  const [searchInput, setSearchInput] = useState("");
-  const handleSearchInput = (e) => {
-    setSearchInput(e.target.value);
-  };
-
   return (
     <Router>
-      <Header handleSearchInput={handleSearchInput} searchInput={searchInput} />
+      <Header />
       <Routes>
-        <Route
-          exact
-          path="/"
-          element={<HomePage searchInput={searchInput} />}
-        />
+        <Route exact path="/" element={<HomePage />} />
         <Route path="/create" element={<Create />} />
         <Route path="/details/:id" element={<DetailsPage />} />
       </Routes>

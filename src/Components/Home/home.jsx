@@ -1,11 +1,11 @@
 import * as S from "../style";
-import { useData } from "../../Hooks/useData";
 import RecipeList from "./recipeList";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 export default function Home() {
-  const { data, searchInput } = useData();
+  const { data, searchInput } = useSelector((state) => state.dataState);
   const recipes = data.recipes;
   const isPending = data.isPending;
   const [filteredRecipes, setFilteredRecipes] = useState([]);
@@ -25,6 +25,11 @@ export default function Home() {
 
   return (
     <>
+      {isPending && (
+        <>
+          <S.HomeSearch>Fetching data...</S.HomeSearch>
+        </>
+      )}
       {searchInput.length > 0 && (
         <S.HomeSearch>Recipes including {searchInput}</S.HomeSearch>
       )}
