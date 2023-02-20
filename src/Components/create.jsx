@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import url from "../url";
 import * as S from "./style";
 
 export default function Create() {
@@ -53,7 +54,7 @@ export default function Create() {
     ) {
       setIsPending(true);
       setDataIsValid(true);
-      fetch("http://192.168.8.130:3001/recipes", {
+      fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(recipe),

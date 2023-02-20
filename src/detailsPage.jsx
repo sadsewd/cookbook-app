@@ -1,19 +1,17 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
 import Details from "./Components/details";
 import useFetch from "./hooks/useFetch";
 import { UPDATE_DATA } from "./Redux-toolkit/Recipes";
+import url from "./url";
 
 const DetailsPage = () => {
-  const { DbData: recipes, isPending } = useFetch();
+  const { DbData: recipes, isPending } = useFetch(url);
   const dispatch = useDispatch();
-  let { id } = useParams();
-  id -= 1;
   useEffect(() => {
     dispatch(UPDATE_DATA({ recipes, isPending }));
   }, [recipes, isPending]);
-  return <Details id={id} />;
+  return <Details />;
 };
 
 export default DetailsPage;

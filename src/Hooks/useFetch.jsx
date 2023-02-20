@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
-const useFetch = () => {
+const useFetch = (url) => {
   const [DbData, setDbData] = useState(null);
   const [isPending, setIsPending] = useState(true);
 
   useEffect(() => {
-    fetch("http://192.168.8.130:3001/recipes")
+    fetch(url)
       .then((res) => {
         if (!res.ok) {
           throw Error("Could not fetch data");

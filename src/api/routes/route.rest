@@ -1,8 +1,8 @@
-GET http://localhost:3000/recipes  
+GET http://localhost:3000/recipes/  
 
 ###
 
-GET http://localhost:3000/recipes/63f359a16ea33b1b1082b3b4
+GET http://localhost:3000/recipes/63f36f8f45b23599404642f8
 
 ###
 
@@ -10,7 +10,7 @@ POST http://localhost:3000/recipes
 Content-Type: application/json
 
 {
-    "name": "maybe",
+    "name": "hello",
     "time": 3,
     "ingredients": ["marv", "gamer"],
     "method": "Cook the marv and get the gamer"

@@ -9,7 +9,7 @@ const RecipeList = ({ recipes, isPending }) => {
         <S.MainRecipeContainer>
           {recipes.map((recipe) => {
             return (
-              <div key={recipe.id}>
+              <div key={recipe._id}>
                 <RecipeItem recipe={recipe} />
               </div>
             );
